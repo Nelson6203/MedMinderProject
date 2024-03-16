@@ -8,7 +8,7 @@ router.post('/', userController.register);
 router.post('/registerUser', userController.register);
 router.get('/getAllUsers', userController.getAllUsers);
 router.get('/getUserById/:id', userController.getUserById);
-router.post('/login', userController.loginPerson);
+router.post('/login', userController.loginUser);
 
 
 // Med routers

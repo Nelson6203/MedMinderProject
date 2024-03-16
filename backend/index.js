@@ -1,12 +1,14 @@
 const express = require('express');
 const baseDatos = require('./config/db');
 const routes = require('./app/routes/routes');
+const cors = require('cors');
 
 baseDatos(); // Iniciamos base
 const app = express();
 
 app.use(express.json()); 
 
+app.use(cors());
 app.use('/api', routes); 
 
 app.get('/', (req, res) => {
@@ -16,3 +18,4 @@ app.get('/', (req, res) => {
 app.listen(4000, () => {
     console.log('Server running port 4000');
 });
+ 

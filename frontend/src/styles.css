@@ -1,0 +1,23 @@
+body {
+  background: #0575E6;
+  background: -webkit-linear-gradient(to right, #021B79, #0575E6);
+  background: linear-gradient(to right, #021B79, #0575E6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+
+section {
+  position: relative;
+  max-width: 400px;
+  background-color: rgb(32, 30, 138);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 3rem;
+}

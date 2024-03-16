@@ -32,7 +32,7 @@ exports.register = async (req, res, next) => {
     }
 };
 
-exports.loginPerson = async (req, res, next) => {
+exports.loginUser = async (req, res, next) => {
     const userData = {
         username: req.body.username,
         password: req.body.password
