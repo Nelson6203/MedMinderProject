@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm,FormGroup } from '@angular/forms';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +16,10 @@ export class LoginComponent implements OnInit {
   username: string = '';
   password: string = '';
 
-  ngOnInit() {
+  isButtonDisabled: boolean = true;
+  errorMessage: string = '';
 
+  ngOnInit() {
   }
 
   onLogin(form: NgForm) {
@@ -25,14 +28,44 @@ export class LoginComponent implements OnInit {
     this.authService.login(form.value).subscribe(
       res => {
         console.log(res);
-        this.router.navigate(['/registerUser']);
+        this.showSuccessAlert();
+        this.router.navigate(['/menuPrincipal']);
       },
       err => {
+        this.showSuccessAlertError();
         console.log(err);
         console.log('errorrrr');
         this.error = err.message;
       }
     );
+  }
+
+  goToRoute(route: string) {
+    this.router.navigateByUrl(route);
+  }
+
+  validate(): void {
+    this.isButtonDisabled = this.username === '' || this.password === '';
+    this.errorMessage = this.isButtonDisabled ? 'Los campos no pueden estar vacíos' : '';
+  }
+
+
+  showSuccessAlert() {
+    swal.fire({
+      icon: 'success',
+      title: 'Inicio de sesión con éxito',
+      showConfirmButton: false,
+      timer: 1600
+    });
+  }
+
+  showSuccessAlertError() {
+    swal.fire({
+      icon: 'error',
+      title: 'Error al iniciar sesión',
+      showConfirmButton: false,
+      timer: 1600
+    });
   }
 
   }
