@@ -46,6 +46,7 @@ export class UserProfileComponent {
     this.httpClient.put(url, this.userData).subscribe(
       (response: any) => {
         this.showSuccessAlert()
+        this.authService.setUsername(this.userData.username);
         console.log('User updated successfully:', response);
       },
       (error) => {
