@@ -1,26 +1,29 @@
+<div style="margin: -15% 16% 15%;">
+  <img src="assets/imagenes/logoCompu.PNG" alt="" style="width: 255px;">
+</div>
+
 <div class="menu-container">
   <form action="">
     <h1 class="d-flex justify-content-center mt-5" style="margin-top: 50px; margin-bottom: 50px; color: #ffffff;"> Registro </h1>
     <div class="container d-flex justify-content-center"> <!-- div grande -->
-
       <form action="" method="post" #formRegisterUser="ngForm" id="formRegisterUser" action="" class="mx-auto" (ngSubmit)="onRegisterUser(formRegisterUser)" >
         <div class="input-group mb-3" >
-          <span class="input-group-text" style="background-color: #4b4c8f;"><i class="fa-solid fa-user"></i></span>
+          <span class="input-group-text" style="background-color: #161B45; color: white;"><i class="fa-solid fa-user"></i></span>
           <input type="username" name="username" id="inputusername" class="form-control" placeholder="Usuario" [(ngModel)]="username" (input)="validate()" ngModel required autofocus>
       </div>
         <div class="input-group mb-3">
-          <span class="input-group-text" style="background-color: #4b4c8f;"><i class="fa-solid fa-envelope"></i></span>
+          <span class="input-group-text" style="background-color: #161B45; color: white;"><i class="fa-solid fa-envelope"></i></span>
           <input type="email" name="email" id="inputemail" class="form-control" placeholder="Correo electronico" [(ngModel)]="email" (input)="validate()" ngModel required autofocus>
         </div>
         <div class="input-group mb-3">
-          <span class="input-group-text" style="background-color: #4b4c8f;"><i class="fa-solid fa-lock"></i></span>
+          <span class="input-group-text" style="background-color: #161B45; color: white;"><i class="fa-solid fa-lock"></i></span>
           <input type="password" name="password" id="inputpassword" class="form-control" placeholder="Contraseña" [(ngModel)]="password" (input)="validate()" ngModel required autofocus>
         </div>
         <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
         <div class="d-flex justify-content-center align-items-center">
-          <button class="btn btn-primary btn-block mx-2" type="submit" [disabled]="isButtonDisabled" (click)="showSuccessAlert()">Registrar</button>
+          <button class="btn btn-primary btn-block mx-2" style="margin-top: 20px; margin-bottom: 10px; width: 220px;  background-color: #183DFC;" type="submit" [disabled]="isButtonDisabled" (click)="showSuccessAlert()">Registrar</button>
         </div>
-        <div class="mt-3">
+        <div class="d-flex justify-content-center align-items-center mt-3" style="margin-top: 50px; margin-bottom: 40px; color: #ffffff;">
           <p>Ya tengo una cuenta <a [routerLink]="[]" (click)="goToRoute('/')">Iniciar Sesión</a></p>
         </div>
       </form>

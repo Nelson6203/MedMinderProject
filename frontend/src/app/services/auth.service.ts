@@ -7,6 +7,8 @@ import { User } from '../models/user';
 })
 
 export class AuthService {
+  private username: string = '';
+  private userId: string = '';
 
   private URL = 'http://localhost:4000/api' // Backend URL
 
@@ -16,5 +18,12 @@ export class AuthService {
     return this.httpClient.post<any>(`${this.URL}/login`, user);
   }
 
+  setUsername(username: string) {
+    this.username = username;
+  }
+
+  getUsername(): string | null {
+    return this.username;
+  }
 
 }

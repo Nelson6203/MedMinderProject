@@ -1,7 +1,5 @@
 body {
-  background: #0575E6;
-  background: -webkit-linear-gradient(to right, #021B79, #0575E6);
-  background: linear-gradient(to right, #021B79, #0575E6);
+  background-color: #000C49 !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,7 +11,7 @@ body {
 .menu-container {
   position: relative;
   max-width: 1300px;
-  background-color: rgb(32, 30, 138);
+  background-color: #061175;
   border: 2px solid rgb(255, 255, 255);
   border-radius: 20px;
   display: flex;
@@ -28,8 +26,15 @@ app-header {
   left: 0;
   width: 100%;
   height: 50px;
-  background-color: rgb(13, 11, 116);
+  background-color: #061175;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  padding: 30px 20px;
 }
+
+.center-iconHeader {
+  flex-grow: 1;
+  text-align: center;
+}
+

@@ -1,19 +1,23 @@
+<div style="margin: -15% 16% 15%;">
+  <img src="assets/imagenes/logoCompu.PNG" alt="" style="width: 255px;">
+</div>
+
 <div class="menu-container">
   <form action="">
     <h1 class="d-flex justify-content-center mt-5" style="margin-top: 50px; margin-bottom: 50px; color: #ffffff;"> Inicio</h1>
     <div class="container d-flex justify-content-center"> <!-- div grande -->
       <form action="" method="post" #formLogin="ngForm" id="formLogin" action="" (ngSubmit)="onLogin(formLogin)"  class="mx-auto">
         <div class="input-group mb-3" >
-          <span class="input-group-text" style="background-color: #4b4c8f;"><i class="fa-solid fa-user"></i></span>
+          <span class="input-group-text" style="background-color: #161B45; color: white;"><i class="fa-solid fa-user"></i></span>
           <input type="username" name="username" id="inputusername" class="form-control" placeholder="Usuario" [(ngModel)]="username" (input)="validate()" ngModel required autofocus>
         </div>
         <div class="input-group mb-3">
-          <span class="input-group-text" style="background-color: #4b4c8f;"><i class="fa-solid fa-lock"></i></span>
+          <span class="input-group-text" style="background-color: #161B45; color: white;"><i class="fa-solid fa-lock"></i></span>
           <input type="password" name="password" id="inputpassword" class="form-control" placeholder="Contraseña" [(ngModel)]="password" (input)="validate()" ngModel required autofocus>
         </div>
         <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
         <div class="d-flex justify-content-center align-items-center mt-3">
-          <button class="btn btn-lg btn-primary btn-block" type="submit" style="margin-top: 20px; margin-bottom: 10px; width: 215px;  background-color: #1613b6;" >Iniciar</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" style="margin-top: 20px; margin-bottom: 10px; width: 215px;  background-color: #183DFC;" >Iniciar</button>
         </div>
         <div class="d-flex justify-content-center align-items-center mt-3" style="margin-top: 50px; margin-bottom: 40px; color: #ffffff;">
           <p>No tengo una cuenta <a [routerLink]="[]" (click)="goToRoute('/registerUser')">Registrate</a></p>

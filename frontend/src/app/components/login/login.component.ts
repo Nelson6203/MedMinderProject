@@ -11,6 +11,8 @@ import swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+
   constructor(private httpClient: HttpClient, private router: Router, private authService: AuthService) { }
   error: any;
   username: string = '';
@@ -28,6 +30,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(form.value).subscribe(
       res => {
         console.log(res);
+        this.authService.setUsername(form.value.username);
         this.showSuccessAlert();
         this.router.navigate(['/menuPrincipal']);
       },

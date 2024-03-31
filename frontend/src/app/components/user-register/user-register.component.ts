@@ -31,7 +31,6 @@ export class UserRegisterComponent {
     });
   }
 
-
   goToRoute(route: string) {
     this.router.navigateByUrl(route);
   }
