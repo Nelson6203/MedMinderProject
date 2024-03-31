@@ -8,17 +8,18 @@
     <div class="container d-flex justify-content-center" style="display: flex; justify-content: center; align-items: center; width: 100%; height: 450px;"> <!-- div grande -->
       <div class="input-group mb-3" style="width: 300px; height: 40px; margin: 20px;">
         <span class="input-group-text" style="background-color: #161B45; color: white;"><i class="fa-solid fa-user"></i></span>
-        <input type="text" name="username" id="inputusername" class="form-control" [(ngModel)]="userData.username" required autofocus>
+        <input type="text" name="username" id="inputusername" class="form-control" [(ngModel)]="userData.username" (input)="validate()" required autofocus>
       </div>
       <div class="input-group mb-3" style="width: 300px; height: 40px; margin: 20px;">
         <span class="input-group-text" style="background-color: #161B45; color: white;"><i class="fa-solid fa-envelope"></i></span>
-        <input type="email" name="email" id="inputemail" class="form-control" [(ngModel)]="userData.email" required autofocus>
+        <input type="email" name="email" id="inputemail" class="form-control" [(ngModel)]="userData.email" (input)="validate()" required autofocus>
       </div>
       <div class="input-group mb-3" style="width: 300px; height: 40px; margin: 20px;">
         <span class="input-group-text" style="background-color: #161B45; color: white;"><i class="fa-solid fa-lock"></i></span>
-        <input type="contraseña" name="contraseña" id="inputcontraseña" class="form-control" [(ngModel)]="userData.password" required autofocus>
+        <input type="contraseña" name="contraseña" id="inputcontraseña" class="form-control" [(ngModel)]="userData.password" (input)="validate()" required autofocus>
       </div>
     </div> <!-- div grande -->
+    <div class="error-message" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" *ngIf="errorMessage">{{ errorMessage }}</div>
     <div>
       <div style="display: grid; grid-template-columns: repeat(2, auto); gap: 900px; margin-top: -60px;">
         <div>

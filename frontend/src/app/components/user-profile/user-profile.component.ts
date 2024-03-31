@@ -14,6 +14,9 @@ export class UserProfileComponent {
   username: string = '';
   userData: any = {};
 
+  isButtonDisabled: boolean = false;
+  errorMessage: string = '';
+
   constructor(private httpClient: HttpClient, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -41,23 +44,28 @@ export class UserProfileComponent {
   }
 
   updateUser() {
-    console.log("actualizando")
-    const url = 'http://localhost:4000/api/updateUserById/' + this.userData._id;
-    this.httpClient.put(url, this.userData).subscribe(
-      (response: any) => {
-        this.showSuccessAlert()
-        this.authService.setUsername(this.userData.username);
-        console.log('User updated successfully:', response);
-      },
-      (error) => {
-        this.showSuccessAlertError()
-        console.error('Error updating user:', error);
-      }
-    );
-  }
+    console.log(this.isButtonDisabled);
+    if(this.isButtonDisabled == false){
+      console.log("updated")
+      const url = 'http://localhost:4000/api/updateUserById/' + this.userData._id;
+      this.httpClient.put(url, this.userData).subscribe(
+        (response: any) => {
+          this.showSuccessUpdateAlert()
+          this.authService.setUsername(this.userData.username);
+          console.log('User updated successfully:', response);
+        },
+        (error) => {
+          this.showUpdateAlertError()
+          console.error('Error updating user:', error);
+        }
+      );
+    } else {
+      this.showErrorUpdateAlertEmptyImputs();
+    }
+}
 
   deleteUser() {
-    console.log("eliminando")
+    console.log("deteled")
     const url = 'http://localhost:4000/api/deleteUserById/' + this.userData._id;
     this.httpClient.delete(url).subscribe(
       (response: any) => {
@@ -67,9 +75,14 @@ export class UserProfileComponent {
       },
       (error) => {
         console.error('Error deleting user:', error);
-        this.showSuccessDeleteAlertError();
+        this.showDeleteAlertError();
       }
     );
+  }
+
+  validate(): void {
+    this.isButtonDisabled = this.userData.username === '' || this.userData.email === '' || this.userData.password === '';
+    this.errorMessage = this.isButtonDisabled ? 'Los campos no pueden estar vacíos' : '';
   }
 
   showSuccessDeleteAlert() {
@@ -81,7 +94,7 @@ export class UserProfileComponent {
     });
   }
 
-  showSuccessDeleteAlertError() {
+  showDeleteAlertError() {
     swal.fire({
       icon: 'error',
       title: 'Error al eliminar usuario',
@@ -90,7 +103,7 @@ export class UserProfileComponent {
     });
   }
 
-  showSuccessAlert() {
+  showSuccessUpdateAlert() {
     swal.fire({
       icon: 'success',
       title: 'Usuario modificado con éxito',
@@ -99,10 +112,19 @@ export class UserProfileComponent {
     });
   }
 
-  showSuccessAlertError() {
+  showUpdateAlertError() {
     swal.fire({
       icon: 'error',
       title: 'Error al modificar usuario',
+      showConfirmButton: false,
+      timer: 1600
+    });
+  }
+
+  showErrorUpdateAlertEmptyImputs() {
+    swal.fire({
+      icon: 'error',
+      title: 'Error al modificar usuario - Hay campos vacíos',
       showConfirmButton: false,
       timer: 1600
     });
