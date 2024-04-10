@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { NgForm,FormGroup } from '@angular/forms';
 import swal from 'sweetalert2';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-user-register',
@@ -14,18 +15,17 @@ export class UserRegisterComponent {
   constructor(private httpClient: HttpClient, private router: Router) { }
   registerForm!: FormGroup;
 
-
   username: string = '';
   email: string = '';
   password: string = '';
   isButtonDisabled: boolean = true;
   errorMessage: string = '';
-
   SERVER: string =  "";
 
+  private URL = environment.BURL;
 
   onRegisterUser(form: NgForm) {
-    this.httpClient.post(`http://localhost:4000/api/registerUser`, form.value).subscribe(response => {
+    this.httpClient.post<any>(`${this.URL}/registerUser`, form.value).subscribe(response => {
       console.log(response);
       this.router.navigateByUrl('/');
     });

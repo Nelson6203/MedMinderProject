@@ -3,6 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import swal from 'sweetalert2';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-user-profile',
@@ -16,6 +17,8 @@ export class UserProfileComponent {
 
   isButtonDisabled: boolean = false;
   errorMessage: string = '';
+
+  private URL = environment.BURL;
 
   constructor(private httpClient: HttpClient, private router: Router, private authService: AuthService) { }
 
@@ -31,8 +34,7 @@ export class UserProfileComponent {
   }
 
   getUserData() {
-    const url = 'http://localhost:4000/api/getUserData/' + this.username;
-    this.httpClient.get(url).subscribe(
+    this.httpClient.get(`${this.URL}/getUserData/` + this.username).subscribe(
       (data: any) => {
         this.userData = data;
         console.log(this.userData);
@@ -46,9 +48,7 @@ export class UserProfileComponent {
   updateUser() {
     console.log(this.isButtonDisabled);
     if(this.isButtonDisabled == false){
-      console.log("updated")
-      const url = 'http://localhost:4000/api/updateUserById/' + this.userData._id;
-      this.httpClient.put(url, this.userData).subscribe(
+      this.httpClient.put(`${this.URL}/updateUserById/` + this.userData._id, this.userData).subscribe(
         (response: any) => {
           this.showSuccessUpdateAlert()
           this.authService.setUsername(this.userData.username);
@@ -65,9 +65,7 @@ export class UserProfileComponent {
 }
 
   deleteUser() {
-    console.log("deteled")
-    const url = 'http://localhost:4000/api/deleteUserById/' + this.userData._id;
-    this.httpClient.delete(url).subscribe(
+    this.httpClient.delete(`${this.URL}/deleteUserById/` + this.userData._id).subscribe(
       (response: any) => {
         console.log('User deleted successfully:', response);
         this.showSuccessDeleteAlert();

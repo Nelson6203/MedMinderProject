@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class AuthService {
   private username: string = '';
   private userId: string = '';
 
-  private URL = 'http://localhost:4000/api' // Backend URL
+  private URL = environment.BURL;
 
   constructor(private httpClient: HttpClient) {}
 
