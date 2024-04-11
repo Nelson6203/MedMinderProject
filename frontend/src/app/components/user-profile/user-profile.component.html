@@ -2,10 +2,11 @@
   <app-header></app-header>
 </div>
 
-<h1 class="d-flex justify-content-center mt-5" style="margin-top: 50px; margin-bottom: 50px; color: #ffffff;"> Información Usuario </h1>
-<div class="menu-container" style="width: 1100px; height: 500px; position: relative;">
+<h1 class="d-flex justify-content-center mt-5" style="margin-top: 100%; margin-bottom: 5%; color: #ffffff;">Información Usuario</h1>
+
+<div class="menu-container" style="height: 500px;">
   <form action="">
-    <div class="container d-flex justify-content-center" style="display: flex; justify-content: center; align-items: center; width: 100%; height: 450px;"> <!-- div grande -->
+    <div class="container d-flex justify-content-center" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; height: 100%; margin-top: 25%;"> <!-- div grande -->
       <div class="input-group mb-3" style="width: 300px; height: 40px; margin: 20px;">
         <span class="input-group-text" style="background-color: #161B45; color: white;"><i class="fa-solid fa-user"></i></span>
         <input type="text" name="username" id="inputusername" class="form-control" [(ngModel)]="userData.username" (input)="validate()" required autofocus>
@@ -21,19 +22,16 @@
     </div> <!-- div grande -->
     <div class="error-message" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" *ngIf="errorMessage">{{ errorMessage }}</div>
     <div>
-      <div style="display: grid; grid-template-columns: repeat(2, auto); gap: 900px; margin-top: -60px;">
+      <div style="display: grid; grid-template-columns: repeat(2, auto); gap: 60%; margin-top: 10%; margin-bottom: 15%">
         <div>
-          <i (click)="deleteUser();" class="fa-solid fa-trash" style="color: #ff0000; font-size: 2.5em; margin-left: 16px;"></i>
-          <p style="color: #ffffff; font-size: 1.3em; pointer-events: none;">Eliminar Usuario</p>
+          <i (click)="deleteUser();" class="fa-solid fa-trash" style="color: #ff0000; font-size: 300%; margin-left: 23%;"></i>
+          <p style="color: #ffffff; font-size: 120%; pointer-events: none;">Eliminar Usuario</p>
         </div>
         <div>
-          <i (click)="updateUser();" class="fa-solid fa-screwdriver-wrench" style="color: #ffffff; font-size: 2.5em; margin-left: 20px;"></i>
-          <p style="color: #ffffff; font-size: 1.3em; pointer-events: none; margin: 0;">Modificar Usuario</p>
+          <i (click)="updateUser();" class="fa-solid fa-screwdriver-wrench" style="color: #ffffff; font-size: 300%; margin-left: 27%;"></i>
+          <p style="color: #ffffff; font-size: 120%; pointer-events: none; margin: 0;">Modificar Usuario</p>
         </div>
       </div>
     </div>
   </form>
-
-
-
 </div>
