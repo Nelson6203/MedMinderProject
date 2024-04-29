@@ -15,6 +15,8 @@ router.put('/updateUserById/:id', userController.updateUserById);
 router.delete('/deleteUserById/:id', userController.deleteUserById);
 
 // Med routers
-router.get('/getAllMed', medController.getAllMed);
+router.post('/registerMed', medController.Medregister);
+router.get('/getMedById/:userID', medController.getMedById);
+router.delete('/deleteMedById/:id', medController.deleteMedById);
 
 module.exports = router;

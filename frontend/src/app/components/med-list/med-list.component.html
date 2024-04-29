@@ -1,0 +1,44 @@
+<div>
+  <app-header></app-header>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card mt-10">
+        <div class="card-body text-center">
+          <h1 class="mt-5" style="margin-bottom: 4%; color: #000000;">Medicamentos</h1>
+          <div class="table-responsive">
+            <table class="table table-striped mt-7">
+              <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Dosis</th>
+                <th scope="col">Frecuencia dosificación</th>
+                <th scope="col">Tipo de tratamiento</th>
+                <th scope="col">Fecha inicio</th>
+                <th scope="col">Duración</th>
+                <th scope="col">Horario</th>
+                <th scope="col">Notas</th>
+                <th scope="col">Eliminar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let med of medList">
+                <td>{{ med.nombre }}</td>
+                <td>{{ med.dosis }}</td>
+                <td>{{ med.frecuenciaDosis }}</td>
+                <td>{{ med.tipoTratamiento }}</td>
+                <td>{{ med.fechaInicio }}</td>
+                <td>{{ med.duracion }}</td>
+                <td>{{ med.horario }}</td>
+                <td>{{ med.notas }}</td>
+                <td> <i (click)="deleteMed(med._id); showDeleteAlert()" class="fa-solid fa-trash" style="color: #ff0000;"></i> </td>
+              </tr>
+              </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

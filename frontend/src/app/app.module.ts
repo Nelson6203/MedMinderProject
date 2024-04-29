@@ -11,6 +11,8 @@ import { UserRegisterComponent } from './components/user-register/user-register.
 import { MenuPrincipalComponent } from './components/menu-principal/menu-principal.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { HeaderComponent } from './components/header/header.component';
+import { MedListComponent } from './components/med-list/med-list.component';
+import { MedRegisterComponent } from './components/med-register/med-register.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { HeaderComponent } from './components/header/header.component';
     UserRegisterComponent,
     MenuPrincipalComponent,
     UserProfileComponent,
-    HeaderComponent
+    HeaderComponent,
+    MedListComponent,
+    MedRegisterComponent
 
   ],
   imports: [
