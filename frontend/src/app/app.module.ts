@@ -13,6 +13,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { HeaderComponent } from './components/header/header.component';
 import { MedListComponent } from './components/med-list/med-list.component';
 import { MedRegisterComponent } from './components/med-register/med-register.component';
+import { HelpAndSupportComponent } from './components/help-and-support/help-and-support.component';
 
 
 @NgModule({
