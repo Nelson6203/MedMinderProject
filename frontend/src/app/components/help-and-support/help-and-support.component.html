@@ -1,0 +1,66 @@
+<div>
+    <app-header></app-header>
+</div>
+
+<h1 class="d-flex justify-content-center mt-5" style="margin-top: 100%; margin-bottom: 5%; color: #ffffff;">Ayuda y Soporte</h1>
+
+<div class="tutorial-container" [ngClass]="{ 'active': tutorial1Visible }">
+  <button class="tutorial-button" (click)="toggleTutorial1()">
+    Tutorial 1
+    <span class="toggle-icon">{{ tutorial1Visible ? '(-)' : '(+)' }}</span>
+  </button>
+  <div class="tutorial-content">
+    <p>Contenido del tutorial 1</p>
+  </div>
+</div>
+
+<div class="tutorial-container" [ngClass]="{ 'active': tutorial2Visible }">
+  <button class="tutorial-button" (click)="toggleTutorial2()">
+    Tutorial 2
+    <span class="toggle-icon">{{ tutorial2Visible ? '(-)' : '(+)' }}</span>
+  </button>
+  <div class="tutorial-content">
+    <p>Contenido del tutorial 2</p>
+  </div>
+</div>
+
+<div class="tutorial-container" [ngClass]="{ 'active': tutorial3Visible }">
+  <button class="tutorial-button" (click)="toggleTutorial3()">
+    Tutorial 3
+    <span class="toggle-icon">{{ tutorial3Visible ? '(-)' : '(+)' }}</span>
+  </button>
+  <div class="tutorial-content">
+    <p>Contenido del tutorial 3</p>
+  </div>
+</div>
+
+<div class="tutorial-container" [ngClass]="{ 'active': tutorial4Visible }">
+  <button class="tutorial-button" (click)="toggleTutorial4()">
+    Tutorial 4
+    <span class="toggle-icon">{{ tutorial4Visible ? '(-)' : '(+)' }}</span>
+  </button>
+  <div class="tutorial-content">
+    <p>Contenido del tutorial 4</p>
+  </div>
+</div>
+
+
+
+<div class="chat-container">
+    <div class="chat-messages">
+        <!-- Aquí se mostrarían los mensajes del chat -->
+        <div class="message user-message">
+            <div class="message-header">Usuario:</div>
+            <div class="message-content">¡Hola! Ayuda.</div>
+        </div>
+        <div class="message assistant-message">
+            <div class="message-header">Asistente:</div>
+            <div class="message-content">Buenas tardes, ¿en qué puedo ayudarle?</div>
+        </div>
+        <!-- Agrega más mensajes aquí -->
+    </div>
+    <div class="chat-input">
+        <input type="text" placeholder="Escriba su mensaje...">
+        <button>Enviar</button>
+    </div>
+</div>

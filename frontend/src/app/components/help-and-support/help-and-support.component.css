@@ -1,0 +1,122 @@
+.tutorials-container {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column; /* Alinea los tutoriales verticalmente */
+    align-items: flex-end; /* Alinea los tutoriales a la derecha */
+  }
+  
+  .tutorial-container {
+    margin-bottom: 10px; /* Espacio entre los tutoriales */
+    width: 200px; /* Ancho fijo para los tutoriales */
+  }
+  
+  .tutorial-button {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .toggle-icon {
+    margin-left: auto;
+    font-weight: bold;
+  }
+  
+  .tutorial-content {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    display: none;
+    position: relative; /* Cambiado a relativo */
+    width: 100%; /* Ancho del contenido al 100% */
+    z-index: 1;
+  }
+  
+  .tutorial-content p {
+    margin: 0;
+  }
+  
+  .tutorial-container.active .tutorial-content {
+    display: block;
+  }
+  
+  
+
+
+
+
+  .chat-container {
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 400px;
+}
+
+.chat-messages {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative; /* Agregar posición relativa para posicionar los encabezados */
+}
+
+.message-header {
+    position: absolute;
+    top: -20px; /* Posición encima del recuadro del mensaje */
+    font-weight: bold;
+}
+
+.user-message {
+    background-color: #DCF8C6; /* Fondo verde claro para mensajes del usuario */
+    align-self: flex-end; /* Alinear a la derecha */
+    margin-left: 100px; /* Agregar un margen a la derecha para los mensajes del usuario */
+}
+
+.assistant-message {
+    background-color: #E5E5EA; /* Fondo gris claro para mensajes del asistente */
+    align-self: flex-start; /* Alinear a la izquierda */
+    margin-right: 100px; /* Agregar un margen a la izquierda para los mensajes del asistente */
+}
+
+.message-content {
+    display: block;
+}
+
+.chat-input {
+    display: flex;
+}
+
+.chat-input input[type="text"] {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.chat-input button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color: #45a049;
+}
