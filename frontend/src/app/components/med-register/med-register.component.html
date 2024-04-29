@@ -1,0 +1,80 @@
+<app-header></app-header>
+
+<h1 class="d-flex justify-content-center mt-5" style="margin-top: 50px; margin-bottom: 50px; color: #ffffff;"> Añadir Medicamento </h1>
+
+<div class="menu-container" style="height: 600px; width: 1000px;">
+  <form action="">
+    <div class="inputs-registerMed" style="width: 300px; height: 40px;">
+      <div style="margin-bottom: 60px; margin-left: 25px;">
+        <input type="text" name="nombreMed" id="nombreMed" placeholder="Nombre del Medicamento" class="form-control" required autofocus>
+      </div>
+      <div style="margin-bottom: 60px; margin-left: 25px;">
+        <input type="text" name="dosis" id="dosis" placeholder="Dosis" class="form-control" required autofocus>
+      </div>
+      <div style="margin-bottom: 60px; margin-left: 25px;">
+        <input type="text" name="frecuenciaDosis" id="frecuenciaDosis" placeholder="Frecuencia de dosificación" class="form-control" required autofocus>
+      </div>
+      <div style="margin-bottom: 60px; margin-left: 25px;">
+        <input type="date" name="fechaInico" id="fechaInico" class="form-control" placeholder="Ending Date">
+      </div>
+      <div style="margin-bottom: 60px; margin-left: 25px;">
+        <input type="text" name="duracion" id="duracion" placeholder="Duración del tratamiento" class="form-control" required autofocus>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: row; justify-content: flex-end;">
+      <h5 style="margin-top: -35px; margin-left: 300px; color: #ffffff;">Horario</h5>
+
+      <div style="margin-top: -33px; margin-left: 100px; color: #ffffff;">
+        <input class="form-check-input"  type="checkbox" id="flexCheckChecked1">
+        <label class="form-check-label" style="margin-left: 10px;" for="flexCheckChecked1">
+            Mañana
+        </label>
+      </div>
+      <div style="margin-top: -33px; margin-left: 100px; color: #ffffff;">
+        <input class="form-check-input" type="checkbox" id="flexCheckChecked2">
+        <label class="form-check-label" style="margin-left: 10px;" for="flexCheckChecked2">
+            Tarde
+        </label>
+      </div>
+      <div style="margin-top: -33px; margin-left: 100px; color: #ffffff;">
+        <input class="form-check-input" type="checkbox" id="flexCheckChecked3">
+        <label class="form-check-label" style="margin-left: 10px;" for="flexCheckChecked3">
+            Noche
+        </label>
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <h5 style="margin-top: 62px; margin-left: 300px; color: #ffffff;">Tipo de Medicamento</h5>
+      </div>
+      <div style="margin-top: -30px; margin-left: 555px; color: #ffffff;">
+        <input type="radio" id="capsula" name="medType" checked>
+        <label class="form-check-label" style="margin-left: 10px; margin-right: 40px;" for="capsula">
+            Cápsula
+        </label>
+        <input type="radio" id="jarabe" name="medType">
+        <label class="form-check-label" style="margin-left: 10px; margin-right: 40px;" for="jarabe">
+            Jarabe
+        </label>
+        <input type="radio" id="otro" name="medType">
+        <label class="form-check-label" style="margin-left: 10px; margin-right: 40px;" for="otro">
+            Otro
+        </label>
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <h5 style="margin-top: 62px; margin-left: 300px; color: #ffffff;">Notas: </h5>
+      </div>
+      <div style="width: 600px;  margin-left: 300px;">
+        <textarea name="username2" id="inputusername2" class="form-control" required autofocus style="height: 150px;"></textarea>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" style="margin-top: 50px; margin-bottom: 10px; width: 215px; margin-left: 700px; background-color: #183DFC;"  >Guardar</button>
+      <!-- (click)="onRegisterUser()" -->
+    </div>
+
+  </form>
+</div>

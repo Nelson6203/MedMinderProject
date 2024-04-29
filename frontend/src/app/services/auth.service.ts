@@ -27,4 +27,12 @@ export class AuthService {
     return this.username;
   }
 
+  setUserId(userId: string) {
+    this.userId = userId;
+  }
+
+  getUserId(): string | null {
+    return this.userId;
+  }
+
 }
