@@ -38,3 +38,14 @@ app-header {
   text-align: center;
 }
 
+.inputs-registerMed{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: -30px;
+  margin-top: -20px;
+}
+
+.inputs-betweenRegister{
+  margin-bottom: 20px;
+}
