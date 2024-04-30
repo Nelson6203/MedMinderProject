@@ -45,22 +45,22 @@
 </div>
 
 
-
 <div class="chat-container">
-    <div class="chat-messages">
-        <!-- Aquí se mostrarían los mensajes del chat -->
-        <div class="message user-message">
-            <div class="message-header">Usuario:</div>
-            <div class="message-content">¡Hola! Ayuda.</div>
-        </div>
-        <div class="message assistant-message">
-            <div class="message-header">Asistente:</div>
-            <div class="message-content">Buenas tardes, ¿en qué puedo ayudarle?</div>
-        </div>
-        <!-- Agrega más mensajes aquí -->
-    </div>
-    <div class="chat-input">
-        <input type="text" placeholder="Escriba su mensaje...">
-        <button>Enviar</button>
-    </div>
+  <div class="chat-messages">
+      <!-- Aquí se mostrarían los mensajes del chat -->
+      <div class="message user-message">
+          <div class="message-header">Usuario:</div>
+          <div class="message-content">¡Hola! Ayuda.</div>
+      </div>
+      <div class="message assistant-message">
+          <div class="message-header">Asistente:</div>
+          <div class="message-content">Buenas tardes, ¿en qué puedo ayudarle?</div>
+      </div>
+      <!-- Agrega más mensajes aquí -->
+  </div>
+  <div class="chat-input">
+      <input type="text" placeholder="Escriba su mensaje..." [(ngModel)]="mensaje">
+      <button (click)="enviarMensaje()">Enviar</button>
+  </div>
 </div>
+
