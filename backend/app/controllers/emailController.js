@@ -1,11 +1,13 @@
 const nodemailer = require('nodemailer');
 
-
-const transporter = nodemailer.createTransport({
+let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'helpmedminder@gmail.com', 
     pass: 'msut qedx atkh iymq' 
+  },
+  tls: {
+    rejectUnauthorized: false
   }
 });
 
@@ -35,4 +37,6 @@ exports.sendEmail = async (req, res) => {
       res.status(200).send('Correo electrónico enviado exitosamente');
     }
   });
+  
+
 };

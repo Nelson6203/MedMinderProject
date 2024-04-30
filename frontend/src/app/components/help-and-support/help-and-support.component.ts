@@ -69,13 +69,11 @@ export class HelpAndSupportComponent {
         correo: this.userData.email,
         consulta: this.mensaje
       };
-      this.httpClient.post(`${this.URL}/send-email`, mensajeData)
+      this.httpClient.post(`${this.URL}/send-email`, mensajeData, { responseType: 'text' })
         .subscribe(response => {
-          console.log('Respuesta del backend:', response); 
-          
+          console.log('Respuesta del backend:', response);
         }, error => {
-          console.error('Error al enviar el mensaje:', error); 
-          
+          console.error('Error al enviar el mensaje:', error);
         });
     }
   }
