@@ -72,10 +72,20 @@ export class HelpAndSupportComponent {
       this.httpClient.post(`${this.URL}/send-email`, mensajeData, { responseType: 'text' })
         .subscribe(response => {
           console.log('Respuesta del backend:', response);
+          this.showSuccessAlert();
         }, error => {
           console.error('Error al enviar el mensaje:', error);
         });
     }
+  }
+
+  showSuccessAlert() {
+    swal.fire({
+      icon: 'success',
+      title: 'Correo enviado con éxito',
+      showConfirmButton: false,
+      timer: 1600
+    });
   }
 
 }

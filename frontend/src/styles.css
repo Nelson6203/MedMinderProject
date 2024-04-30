@@ -49,3 +49,10 @@ app-header {
 .inputs-betweenRegister{
   margin-bottom: 20px;
 }
+
+.contenedor-tutoriales {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
