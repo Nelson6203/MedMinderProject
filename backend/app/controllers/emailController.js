@@ -22,7 +22,6 @@ exports.sendEmail = async (req, res) => {
       <h3>Consulta de usuario:</h3>
       <p><strong>Fecha:</strong> ${new Date()}</p>
       <p><strong>Usuario:</strong> ${nombre}</p>
-      <p><strong>ID:</strong> ${id}</p>
       <p><strong>Correo:</strong> ${correo}</p>
       <p><strong>Consulta realizada:</strong> ${consulta}</p>
     `
