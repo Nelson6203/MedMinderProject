@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
 import { environment } from 'src/environments/environment';
-import { MatDialog } from "@Angular/material/dialog"
+import { MatDialog } from "@angular/material/dialog"
 import { NotificationComponent } from '../components/notification/notification.component';
 import { Med } from '../models/med'
 
