@@ -11,10 +11,12 @@ import { environment } from 'src/environments/environment';
 })
 export class MenuPrincipalComponent {
 
-  constructor(private router: Router, private httpClient: HttpClient, private authService: AuthService) { }
+  constructor(private router: Router, private httpClient: HttpClient, public authService: AuthService) { }
 
   private URL = environment.BURL;
   userData: any = {};
+  medList: any
+  userid: string = '';
 
   goToRoute(route: string) {
     this.router.navigateByUrl(route);
@@ -22,14 +24,15 @@ export class MenuPrincipalComponent {
 
   ngOnInit(): void {
     this.getUserData();
+    this.iniciarRevision();
   }
-
   getUserData() {
     this.httpClient.get(`${this.URL}/getUserData/` + this.authService.getUsername()).subscribe(
       (data: any) => {
         this.userData = data;
         console.log("aqui " + this.userData._id);
         this.authService.setUserId(this.userData._id);
+        this.obtenerMeds();
       },
       (error) => {
         console.log(error);
@@ -37,6 +40,22 @@ export class MenuPrincipalComponent {
     );
   }
 
+  obtenerMeds(){
+    this.userid = this.authService.getUserId()!;
+    this.httpClient.get(`${this.URL}/getMedById/` + this.userid).subscribe(
+        (data) => {
+            this.medList = data;
+            this.authService.setMedList(this.medList);
+        },
+        (error) => {
+            console.error('No se encontraron medicamentos para ese ID de usuario: ');
+        }
+    );
+}
 
+iniciarRevision() {
+  // Ejecuta revisarHoras cada minuto
+  setInterval(() => this.authService.revisarHoras(), 1000);
+}
 }
 

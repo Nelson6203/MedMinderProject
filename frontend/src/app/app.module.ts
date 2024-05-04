@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
-
+import { MatDialogModule } from "@Angular/material/dialog"
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -14,6 +14,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { MedListComponent } from './components/med-list/med-list.component';
 import { MedRegisterComponent } from './components/med-register/med-register.component';
 import { HelpAndSupportComponent } from './components/help-and-support/help-and-support.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NotificationComponent } from './components/notification/notification.component';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { HelpAndSupportComponent } from './components/help-and-support/help-and-
     HeaderComponent,
     MedListComponent,
     MedRegisterComponent,
-    HelpAndSupportComponent
+    HelpAndSupportComponent,
+    NotificationComponent
 
   ],
   imports: [
@@ -34,7 +37,9 @@ import { HelpAndSupportComponent } from './components/help-and-support/help-and-
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

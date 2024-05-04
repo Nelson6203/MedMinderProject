@@ -9,16 +9,16 @@
         <input type="text" name="nombre" id="nombre" placeholder="Nombre del Medicamento" class="form-control" [(ngModel)]="nombre" (input)="validate()" ngModel required autofocus required>
       </div>
       <div style="margin-bottom: 60px; margin-left: 25px;">
-        <input type="text" name="dosis" id="dosis" placeholder="Dosis" class="form-control" [(ngModel)]="dosis" (input)="validate()" ngModel required >
+        <input type="number" name="dosis" id="dosis" placeholder="Dosis" class="form-control" [(ngModel)]="dosis" (input)="validate()" ngModel min="0" required >
       </div>
       <div style="margin-bottom: 60px; margin-left: 25px;">
-        <input type="text" name="frecuenciaDosis" id="frecuenciaDosis" placeholder="Frecuencia de dosificación" class="form-control" [(ngModel)]="frecuenciaDosis" (input)="validate()" ngModel required >
+        <input type="number" name="frecuenciaDosis" id="frecuenciaDosis" placeholder="Frecuencia de dosificación(horas)" class="form-control" [(ngModel)]="frecuenciaDosis" (input)="validate()" ngModel min="0" required >
       </div>
       <div style="margin-bottom: 60px; margin-left: 25px;">
-        <input type="date" name="fechaInicio" id="fechaInicio" class="form-control" [(ngModel)]="fechaInicio" (input)="validate()" ngModel required>
+        <input type="datetime-local" name="fechaInicio" id="fechaInicio" class="form-control" [(ngModel)]="fechaInicio" (input)="validate()" ngModel required>
       </div>
       <div style="margin-bottom: 60px; margin-left: 25px;">
-        <input type="text" name="duracion" id="duracion" placeholder="Duración del tratamiento" class="form-control" [(ngModel)]="duracion" (input)="validate()" ngModel required>
+        <input type="number" name="duracion" id="duracion" placeholder="Duración del tratamiento(Días)" class="form-control" [(ngModel)]="duracion" (input)="validate()" ngModel min="0" required>
       </div>
     </div>
 

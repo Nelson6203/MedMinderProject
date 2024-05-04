@@ -40,6 +40,8 @@ export class MedRegisterComponent {
   horarioListaEnviar: string = '';
   notas: string = '';
 
+  opcionesSeleccionadas: string[] = [];
+
   verificandoHorario(){
     if (this.maniana && !this.horarioList.includes("Mañana")){
       this.horarioList.push("Mañana");

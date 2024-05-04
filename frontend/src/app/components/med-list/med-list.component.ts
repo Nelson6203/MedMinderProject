@@ -24,16 +24,18 @@ export class MedListComponent {
   }
 
   getAllMeds() {
-    console.log("getallMeds")
     this.userid = this.authService.getUserId()!;
     console.log("userid: " + this.userid);
+    this.showAlertLoad();
     this.http.get(`${this.URL}/getMedById/` + this.userid).subscribe(
         (data) => {
             this.medList = data;
-            console.log("medlist: ", this.medList);
+            swal.close();
+            this.authService.setMedList(this.medList);
         },
         (error) => {
             console.error('No se encontraron medicamentos para ese ID de usuario: ');
+            swal.close();
         }
     );
   }
@@ -51,6 +53,19 @@ export class MedListComponent {
       showConfirmButton: false,
       timer: 1500
     });
+  }
+
+  showAlertLoad(){
+    swal.fire({
+      title: 'Cargando...',
+      text: 'Espere un momento por favor',
+      showConfirmButton: false,
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      allowEnterKey: false,
+
+    });
+    swal.showLoading();
   }
 }
 
