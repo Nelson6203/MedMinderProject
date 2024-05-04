@@ -69,6 +69,7 @@ export class HelpAndSupportComponent {
         correo: this.userData.email,
         consulta: this.mensaje
       };
+      this.showAlertLoad();
       this.httpClient.post(`${this.URL}/send-email`, mensajeData, { responseType: 'text' })
         .subscribe(response => {
           console.log('Respuesta del backend:', response);
@@ -86,6 +87,19 @@ export class HelpAndSupportComponent {
       showConfirmButton: false,
       timer: 1600
     });
+  }
+
+  showAlertLoad(){
+    swal.fire({
+      title: 'Enviando...',
+      text: 'Espere un momento por favor',
+      showConfirmButton: false,
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      allowEnterKey: false,
+
+    });
+    swal.showLoading();
   }
 
 }
