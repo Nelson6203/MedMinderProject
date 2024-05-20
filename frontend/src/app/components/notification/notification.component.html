@@ -1,24 +1,24 @@
-<div class="menu-containerNotification" style="position: relative;">
-  <i (click)="authService.closeNotification()" class="fa-solid fa-x" style="color: #ffffff; font-size: 2.5em; position: absolute; top: 0; right: 20px;"></i>
-  <div style="display: flex; align-items: center; margin-top: -300px; margin-left: 1000px;">
-    <i class="fa-solid fa-bell" style="color: #ffffff; font-size: 100px; animation: swing 2s infinite, colorChange 2s infinite; margin-left: -750px;"></i>
-    <h1 class="d-flex justify-content" style="color: #ffff00; font-size: 45px; margin-left: 20px;"><strong>Notificación medicamento</strong></h1>
+<div class="menu-containerNotification">
+  <i (click)="authService.closeNotification()" class="fa-solid fa-x close-icon"></i>
+  <div class="header">
+    <i class="fa-solid fa-bell bell-icon"></i>
+    <h1>Notificación medicamento</h1>
   </div>
-  <div class="container d-flex justify-content-center" style="display: flex; justify-content: center; align-items: center; margin-left: -1185px;">
-    <div class="input-group mb-3" style="width: 200px; height: 40px; margin: 20px;">
-      <input type="text" name="nombre" id="inputnombre" class="form-control" [value]="this.authService.getNombre()" readonly style="text-align: center;">
+  <div class="content">
+    <div class="input-groupM">
+      <input type="text" name="nombre" id="inputnombre" class="form-control" [value]="this.authService.getNombre()" readonly>
     </div>
-    <div class="input-group mb-3" style="width: 200px; height: 40px; margin: 20px;">
-      <input type="dosis" name="dosis" id="inputdosis" class="form-control"[value]="this.authService.getDosis()" readonly style="text-align: center;">
+    <div class="input-groupM">
+      <input type="text" name="dosis" id="inputdosis" class="form-control" [value]="this.authService.getDosis()" readonly>
     </div>
-    <div class="input-group mb-3" style="width: 200px; height: 40px; margin: 20px;">
-      <input type="hora" name="hora" id="inputhora" class="form-control" [value]="this.authService.gethoraMed()" readonly style="text-align: center;">
+    <div class="input-groupM">
+      <input type="text" name="hora" id="inputhora" class="form-control" [value]="this.authService.gethoraMed()" readonly>
     </div>
-    <div class="input-group mb-3" style="width: 200px; height: 40px; margin: 20px;">
-      <input type="notas" name="notas" id="inputnotas" class="form-control"[value]="this.authService.getnota()" readonly style="text-align: center;">
+    <div class="input-groupM">
+      <input type="text" name="notas" id="inputnotas" class="form-control" [value]="this.authService.getnota()" readonly>
     </div>
-    <div class="d-flex align-items-center mb-3 ml-5 " style="margin-left: -600px; margin-top: 300px;">
-      <button class="btn btn-primary btn-block mx-2" type="submit" style="margin-top: 20px; margin-bottom: 20px; width: 215px; height: 60px;  background-color: #183DFC; "(click)="authService.closeNotification()">Aceptar</button>
-    </div>
+  </div>
+  <div class="footer">
+    <button class="btn btn-primary" type="submit" (click)="authService.closeNotification()">Aceptar</button>
   </div>
 </div>
